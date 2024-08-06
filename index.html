@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download VCF</title>
-</head>
-<body>
-    <script>
-        const vcfContent = `
 BEGIN:VCARD 
 VERSION:3.0
 FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:Bohdan Rizhnyak
@@ -22,16 +12,3 @@ ORG;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:P2W
 X-SOCIALPROFILE;TYPE=Instagram:https://www.instagram.com/@xaoc_it
 X-SOCIALPROFILE;TYPE=Telegram:https://t.me/xaoc_it
 END:VCARD
-        `.trim();
-
-        const blob = new Blob([vcfContent], { type: 'text/vcard' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Bohdan_Rizhnyak.vcf';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    </script>
-</body>
-</html>
